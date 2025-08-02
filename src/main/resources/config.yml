@@ -1,0 +1,79 @@
+allowed_blocks:
+  # Древесина - Брёвна
+  - acacia_log
+  - birch_log
+  - cherry_log
+  - dark_oak_log
+  - jungle_log
+  - mangrove_log
+  - oak_log
+  - pale_oak_log
+  - spruce_log
+  # Древесина
+  - acacia_wood
+  - birch_wood
+  - cherry_wood
+  - dark_oak_wood
+  - jungle_wood
+  - mangrove_wood
+  - oak_wood
+  - pale_oak_wood
+  - spruce_wood
+  # Обтёсанная древесина - Брёвна
+  - stripped_acacia_log
+  - stripped_birch_log
+  - stripped_cherry_log
+  - stripped_dark_oak_log
+  - stripped_jungle_log
+  - stripped_mangrove_log
+  - stripped_oak_log
+  - stripped_pale_oak_log
+  - stripped_spruce_log
+  # Обтёсанная древесина
+  - stripped_acacia_wood
+  - stripped_birch_wood
+  - stripped_cherry_wood
+  - stripped_dark_oak_wood
+  - stripped_jungle_wood
+  - stripped_mangrove_wood
+  - stripped_oak_wood
+  - stripped_pale_oak_wood
+  - stripped_spruce_wood
+  # Доски
+  - acacia_planks
+  - birch_planks
+  - cherry_planks
+  - dark_oak_
+  - jungle_planks
+  - mangrove_planks
+  - oak_planks
+  - pale_oak_planks
+  - spruce_planks
+  # Бамбуковые предметы
+  - bamboo_block
+  - stripped_bamboo_block
+  - bamboo_planks
+  - bamboo_mosaic
+  - bamboo_stairs
+  - bamboo_mosaic_stairs
+  - bamboo_slab
+  - bamboo_mosaic_slab
+  - bamboo_bamboo_fence
+  - bamboo_fence_gate
+  - bamboo_door
+  - bamboo_trapdoor
+  - bamboo_pressure_plate
+  - bamboo_button
+  - bamboo
+  # Ступеньки из Досок
+  - acacia_stairs
+  - birch_stairs
+  - cherry_stairs
+  - dark_oak_stairs
+  - jungle_stairs
+  - mangrove_stairs
+  - oak_stairs
+  - pale_oak_stairs
+  - spruce_stairs
+  # Остальные виды ступенек
+  - andesite_stairs

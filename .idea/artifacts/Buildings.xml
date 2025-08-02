@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="Buildings">
+    <output-path>$PROJECT_DIR$/../../laimcraft/servers/roleplay/plugins</output-path>
+    <root id="archive" name="Buildings.jar">
+      <element id="module-output" name="Buildings" />
+    </root>
+  </artifact>
+</component>

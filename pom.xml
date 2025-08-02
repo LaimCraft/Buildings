@@ -80,5 +80,12 @@
             <version>1</version>
             <systemPath>E:\LaimCraft\API\API.jar</systemPath>
         </dependency>
+        <dependency>
+            <groupId>worldedit</groupId>
+            <artifactId>paper</artifactId>
+            <scope>system</scope>
+            <version>1</version>
+            <systemPath>E:\LaimCraft\Servers\RolePlay\plugins\worldedit.jar</systemPath>
+        </dependency>
     </dependencies>
 </project>
