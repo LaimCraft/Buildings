@@ -9,8 +9,11 @@ import com.sk89q.worldedit.extent.clipboard.io.ClipboardFormats;
 import com.sk89q.worldedit.extent.clipboard.io.ClipboardReader;
 import com.sk89q.worldedit.math.BlockVector3;
 import com.sk89q.worldedit.regions.CuboidRegion;
+import com.sk89q.worldedit.world.block.BaseBlock;
 import com.sk89q.worldedit.world.block.BlockState;
 import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
+import org.bukkit.entity.Player;
 import ru.laimcraft.api.log.Debug;
 
 import java.io.File;
@@ -18,6 +21,7 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
+import static ru.laimcraft.api.log.Debug.debug;
 import static ru.laimcraft.buildings.BlockManager.air;
 import static ru.laimcraft.buildings.BlockManager.allowedBlocks;
 
@@ -27,9 +31,9 @@ public class Construction {
 
     private Clipboard clipboard;
 
-    public static Clipboard getClipboard(String schematicName) {
+    public static Clipboard getClipboard(Player player, String schematicName) {
 
-        File file = new File(Bukkit.getPluginsFolder(), "WorldEdit\\schematics\\" + schematicName);
+        File file = new File(Bukkit.getPluginsFolder(), "WorldEdit\\schematics\\" + schematicName + ".schem");
 
         try (ClipboardReader clipboardReader = ClipboardFormats.findByFile(file).getReader(new FileInputStream(file))) {
             Clipboard oldClipboard = clipboardReader.read();
@@ -41,30 +45,36 @@ public class Construction {
             BlockVector3 min = region.getMinimumPoint();
             BlockVector3 max = region.getMaximumPoint();
 
+            Debug.error("+1");
+
             for (int x = min.x(); x <= max.x(); x++) {
                 for (int y = min.y(); y <= max.y(); y++) {
                     for (int z = min.z(); z <= max.z(); z++) {
                         BlockVector3 pos = BlockVector3.at(x, y, z);
                         BlockState blockState = oldClipboard.getBlock(pos);
                         try {
-                            if (allowedBlocks.contains(BukkitAdapter.adapt(blockState.getBlockType().getItemType()))) {
+                            if (allowedBlocks.contains(BukkitAdapter.adapt(blockState.getBlockType()))) {
                                 newClipboard.setBlock(pos, blockState.toBaseBlock());
                             } else {
                                 newClipboard.setBlock(pos, air);
                             }
                         } catch (WorldEditException e) {
-                            Debug.debug(e.getMessage());
+                            debug(e.getMessage());
                         }
                     }
                 }
             }
 
+            Debug.error("+2");
+
             return newClipboard;
         } catch (FileNotFoundException e) {
             Debug.error(e.getMessage());
+            player.sendMessage(ChatColor.RED + "FileNotFound");
             return null;
         } catch (IOException e) {
             Debug.error(e.getMessage());
+            player.sendMessage(ChatColor.RED + "IOException");
             return null;
         }
     }

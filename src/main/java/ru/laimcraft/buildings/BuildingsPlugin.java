@@ -7,6 +7,8 @@ import org.bukkit.Bukkit;
 import org.bukkit.World;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import java.io.File;
+
 public final class BuildingsPlugin extends JavaPlugin {
 
     public static BuildingsPlugin instance;
@@ -23,6 +25,8 @@ public final class BuildingsPlugin extends JavaPlugin {
         worldEdit = WorldEdit.getInstance();
         worldEditSessionManager = worldEdit.getSessionManager();
 
+        File file = new File(Bukkit.getPluginsFolder(), "Buildings\\config.yml");
+        file.delete();
         saveDefaultConfig();
 
         getCommand("construction").setExecutor(new ConstructionCommand());

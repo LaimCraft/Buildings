@@ -30,11 +30,6 @@ public class BlockManager {
             }
         }
 
-        for (Material material : blocks) {
-            System.out.println(material.name());
-            Debug.log(material.name());
-        }
-
         return blocks;
     }
 }

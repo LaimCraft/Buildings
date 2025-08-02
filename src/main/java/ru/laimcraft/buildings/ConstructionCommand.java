@@ -23,26 +23,19 @@ public class ConstructionCommand implements PlayerCommand {
         if (playerSession == null) player.sendMessage(ChatColor.RED + "Сессия не активна");
 
         try {
+            Debug.error("0");
             if(strings[0] == null || strings[0].isEmpty()) return;
-            Clipboard clipboard = Construction.getClipboard(strings[0]);
-
+            Debug.error("-1");
+            Clipboard clipboard = Construction.getClipboard(player, strings[0]);
+            Debug.error("1");
+            if(clipboard == null) return;
+            Debug.error("2");
             Location location = player.getLocation();
             BlockVector3 pasteLocation = BlockVector3.at(location.getBlockX(), location.getBlockY(), location.getBlockZ());
 
             ClipboardHolder clipboardHolder = new ClipboardHolder(clipboard);
             playerSession.setClipboard(clipboardHolder);
-
-            /*try (EditSession editSession = worldEdit.getEditSessionFactory().getEditSession(weWorld, -1)) {
-                //ClipboardHolder clipboardHolder = new ClipboardHolder(clipboard);
-
-                Operation operation = clipboardHolder
-                        .createPaste(editSession)
-                        .to(pasteLocation)
-                        .ignoreAirBlocks(false)
-                        .build();
-
-                Operations.complete(operation);
-            }*/
+            Debug.error("5");
         } catch (Exception e) {
             Debug.debug(e.getMessage());
         }

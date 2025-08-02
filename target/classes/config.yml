@@ -43,7 +43,7 @@ allowed_blocks:
   - acacia_planks
   - birch_planks
   - cherry_planks
-  - dark_oak_
+  - dark_oak_planks
   - jungle_planks
   - mangrove_planks
   - oak_planks
@@ -58,7 +58,7 @@ allowed_blocks:
   - bamboo_mosaic_stairs
   - bamboo_slab
   - bamboo_mosaic_slab
-  - bamboo_bamboo_fence
+  - bamboo_fence
   - bamboo_fence_gate
   - bamboo_door
   - bamboo_trapdoor
