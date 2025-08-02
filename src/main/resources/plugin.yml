@@ -1,0 +1,7 @@
+name: Buildings
+version: '0.0.1'
+main: ru.laimcraft.buildings.BuildingsPlugin
+api-version: '1.21'
+load: STARTUP
+authors: [ LaimCraft, isaevisa05 ]
+website: https://github.com/LaimCraft
