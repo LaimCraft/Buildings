@@ -8,7 +8,4 @@ public final class BuildingsPlugin extends JavaPlugin {
     public void onEnable() {
         
     }
-
-    @Override
-    public void onDisable() {}
 }
